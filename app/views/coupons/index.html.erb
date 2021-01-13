@@ -1,0 +1,11 @@
+<h1>View all coupons</h1>
+
+<ul>
+    <% @all_coupons.each do | coupon | %>
+        <li>
+            <%= link_to "#{ coupon.coupon_code }", coupon_path( coupon ) %> | <%= coupon.store %>
+        </li>
+    <% end %>
+</ul>
+
+<%= params.inspect %>

@@ -18,12 +18,12 @@ end
 
 describe 'form page' do
   it 'form renders with the new action' do
-    visit new_coupon_path
+    visit '/coupons/new'
     expect(page).to have_content("Coupon Form")
   end
 
   it 'new form submits content and renders form content' do
-    visit new_coupon_path
+    visit '/coupons/new'
 
     fill_in 'coupon[coupon_code]', with: "YAYFREE"
     fill_in 'coupon[store]', with: "Hobby Lobby"
@@ -34,7 +34,7 @@ describe 'form page' do
   end
 
   it 'creates a record in the database' do
-    visit new_coupon_path
+    visit '/coupons/new'
 
     fill_in 'coupon[coupon_code]', with: "FREEITEM"
     fill_in 'coupon[store]', with: "Quip"
